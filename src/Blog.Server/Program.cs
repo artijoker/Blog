@@ -96,22 +96,21 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//DefaultFilesOptions options = new DefaultFilesOptions();
-//options.DefaultFileNames.Clear();
-//options.DefaultFileNames.Add("user.html");
-//options.DefaultFileNames.Add("admin.html");
+DefaultFilesOptions options = new DefaultFilesOptions();
+options.DefaultFileNames.Clear();
+options.DefaultFileNames.Add("user.html");
 
-//app.UseDefaultFiles(options);
+app.UseDefaultFiles(options);
 app.UseStaticFiles();
 
 
-app.UseCors(policy =>
-{
-    policy.AllowAnyMethod()
-     .AllowAnyHeader()
-     .WithOrigins("http://localhost:4200", "http://localhost:63903")
-     .AllowCredentials();
-});
+//app.UseCors(policy =>
+//{
+//    policy.AllowAnyMethod()
+//     .AllowAnyHeader()
+//     .WithOrigins("http://localhost:4200", "http://localhost:63903")
+//     .AllowCredentials();
+//});
 
 
 
